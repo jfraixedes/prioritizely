@@ -1,10 +1,22 @@
 import Vue from 'vue'
 import App from './App.vue'
-import store from './store'
+import { DataComponents } from './mixins/DataComponents.js'
+import ProgressBar from './components/progress-bar/ProgressBar.vue'
 
-Vue.config.productionTip = false
+import { store } from './store/store';
+
+Vue.filter('capitalize', (value) => {
+  if (!value) return '';
+  value = value.toString();
+  return value.charAt(0).toUpperCase() + value.slice(1);
+})
+
+Vue.component('ProgressBar', ProgressBar)
+
+Vue.mixin(DataComponents)
 
 new Vue({
+  el: '#app',
   store,
-  render: function (h) { return h(App) }
-}).$mount('#app')
+  render: h => h(App)
+})
