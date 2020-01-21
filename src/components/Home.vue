@@ -6,7 +6,7 @@
     </div>
     <button @click="firstStep">START PRIORITIZING</button>
     <div class="bullet-points-wrapper">
-      <h2>How ir works</h2>
+      <h2>How it works</h2>
       <span class="bullet-number">1</span>
       <p>We ask you a bunch of yes or no questions.</p>
       <span class="bullet-number">2</span>
